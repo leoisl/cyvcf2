@@ -63,9 +63,7 @@ if bool(int(os.getenv("LIBDEFLATE", 0))):
 extensions = [Extension("cyvcf2.cyvcf2",
                         ["cyvcf2/cyvcf2.pyx"] + sources,
                         libraries=['z', 'bz2', 'lzma', 'curl', 'ssl'] + extra_libs,
-                        extra_compile_args=["-Wno-sign-compare", "-Wno-unused-function",
-                            "-Wno-strict-prototypes",
-                            "-Wno-unused-result", "-Wno-discarded-qualifiers"],
+                        extra_compile_args=[],
                         include_dirs=['htslib', 'cyvcf2', np.get_include()])]
 
 
